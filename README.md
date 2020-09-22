@@ -173,20 +173,20 @@ The methodology followed for producing an ARIMA model is summarized in the follo
     However, this gave poor results: AIC = 2090.626
     
     Tried other p, d, q values as follows:
-    'AR': 2, 'MA': 0,
-    'AR': 2, 'MA': 1,
-    'AR': 1, 'MA': 0,
-    'AR': 1, 'MA': 1,
-    'AR': 3, 'MA': 0,
-    'AR': 3, 'MA': 1
+    - 'AR': 2, 'MA': 0,
+    - 'AR': 2, 'MA': 1,
+    - 'AR': 1, 'MA': 0,
+    - 'AR': 1, 'MA': 1,
+    - 'AR': 3, 'MA': 0,
+    - 'AR': 3, 'MA': 1
     
     Results obtained were:
-    ARIMA(2, 1, 0) AIC: 2090.478012840021
-    ARIMA(2, 1, 1) AIC: 2086.769481885772
-    ARIMA(1, 1, 0) AIC: 2088.6958921646024
-    ARIMA(1, 1, 1) AIC: 2090.625790904691
-    ARIMA(3, 1, 0) AIC: 2081.4707156798445
-    ARIMA(3, 1, 1) AIC: 2082.3967226022946
+    - ARIMA(2, 1, 0) AIC: 2090.478012840021
+    - ARIMA(2, 1, 1) AIC: 2086.769481885772
+    - ARIMA(1, 1, 0) AIC: 2088.6958921646024
+    - ARIMA(1, 1, 1) AIC: 2090.625790904691
+    - ARIMA(3, 1, 0) AIC: 2081.4707156798445
+    - ARIMA(3, 1, 1) AIC: 2082.3967226022946
     
     
     Then, tried stepwise **Auto Arima** search and observed result as follows:
