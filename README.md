@@ -12,7 +12,7 @@ Considering the complex logistics involved before the tea reaches the consumer, 
 
 - For Sellers (Tea Estates): 
     The question is what quantity to put up for any given weekly auction at any one of 6 auction centers around the country run by the Tea Board of India. 
-    The tea must be despatched to the auction center **2 to 3 weeks prior to the date of the auction. 
+    The tea must be despatched to the auction center **2 to 3 weeks prior to the date of the auction.** 
     Typically, there are 2 or 3 auction centers that are within reach of trucks within that time span and the seller must decide where to send how much.
 
 - For Buyers (Tea Packeteers):
