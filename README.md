@@ -246,7 +246,7 @@ The methodology followed for producing an ARIMA model is summarized in the follo
    ![Training and Validation Loss](Images/LSTM_Univariate_Price_Model_Training_and_Validation_loss.png)
    Looking at MAPE over the test data (about 30% of total data)
    
-   ![Univariate LSTM](Images/UnivariateLSTMModelPredictions_testdata)
+   ![Univariate LSTM](Images/UnivariateLSTMModelPredictions_testdata.png)
 
    MAPE for known data (before 2020) = 10.994293417050645
    
@@ -269,7 +269,7 @@ The methodology followed for producing an ARIMA model is summarized in the follo
    
    Some sample predictions:
    
-   ![Sample Single Step Predictions](Images/SampleSingeStepPredictions)
+   ![Sample Single Step Predictions](Images/SampleSingeStepPredictions.png)
    
    **Multivariate Multi-step output Model**
    For 3 weeks ahead forecasting
@@ -287,7 +287,7 @@ The methodology followed for producing an ARIMA model is summarized in the follo
    
    Some sample predictions:
    
-   ![Sample Multi Step Predictions](Images/SampleMultiStepPredictions)
+   ![Sample Multi Step Predictions](Images/SampleMultiStepPredictions.png)
  
    
 ## Next Steps
