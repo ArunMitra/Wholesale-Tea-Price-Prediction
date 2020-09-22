@@ -157,7 +157,7 @@ The methodology followed for producing an ARIMA model is summarized in the follo
     
     Did First differencing
     
-    ![Series and First Differences](Images/Series_and_First_Differences.png]
+    ![Series and First Differences](Images/Series_and_First_Differences.png)
     
     Checked for stationarity (ADFuller Test)
     ADF p-value for differenced price series: 0.00
