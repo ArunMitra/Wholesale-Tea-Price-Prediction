@@ -200,7 +200,7 @@ The methodology followed for producing an ARIMA model is summarized in the follo
     
     ![SARIMAX with seasonality of 104 weeks](Images/SARIMAX(2,1,2)[104](2,1,0).png)
     
-    ![SARIMAX with seasonality of 156 weeks](Images/SARIMAX(0,1,1)[156(1,1,0).png)
+    ![SARIMAX with seasonality of 156 weeks](Images/SARIMAX(0,1,1)[156](1,1,0).png)
     
     
     Checked the best model's residuals to make sure that the variability looks like white noise:
