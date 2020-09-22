@@ -172,6 +172,11 @@ The methodology followed for producing an ARIMA model is summarized in the follo
     
     However, this gave poor results: AIC = 2090.626
     
+    NOTE: A nonseasonal ARIMA model is classified as an "ARIMA(p,d,q)" model, where: 
+          p is the number of autoregressive terms, 
+          d is the number of nonseasonal differences needed for stationarity, and. 
+          q is the number of lagged forecast errors in the prediction equation.
+          
     Tried other p, d, q values as follows:
     - 'AR': 2, 'MA': 0,
     - 'AR': 2, 'MA': 1,
@@ -188,8 +193,10 @@ The methodology followed for producing an ARIMA model is summarized in the follo
     - ARIMA(3, 1, 0) AIC: 2081.4707156798445
     - ARIMA(3, 1, 1) AIC: 2082.3967226022946
     
+    Then went to seasonal ARIMA (SARIMA)
     
-    Then, tried stepwise **Auto Arima** search and observed result as follows:
+    
+    Tried stepwise **Auto Arima** search and observed result as follows:
     
     - SARIMAX (0,1,1)(2,1,0)[52] with a seasonality of  52 weeks: AIC = 1940.700  MAPE =  9.4475
     - SARIMAX(2,1,2)(2,1,0)[104] with a seasonality of 104 weeks: AIC = 1662.785  MAPE =  8.5770
@@ -209,7 +216,6 @@ The methodology followed for producing an ARIMA model is summarized in the follo
     
     And checked for correlations:
     ![Best SARIMAX Autocorrelation](Images/Autocorrelation_from_SARIMAX(2,1,2)[104](2,1,0).png)
-    
     
     Future predictions (into the first weeks of 2020 ... remember that we decided to only use data up to 2019, but we do have 2020 data)
     
