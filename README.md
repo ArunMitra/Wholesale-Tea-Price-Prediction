@@ -191,16 +191,16 @@ The methodology followed for producing an ARIMA model is summarized in the follo
     
     Then, tried stepwise **Auto Arima** search and observed result as follows:
     
-    SARIMAX (0,1,1)(2,1,0)[52] with a seasonality of  52 weeks: AIC = 1940.700  MAPE =  9.4475
-    SARIMAX(2,1,2)(2,1,0)[104] with a seasonality of 104 weeks: AIC = 1662.785  MAPE =  8.5770
-    SARIMAX(0,1,1)(1,1,0)[156] with a seasonality of 156 weeks: AIC = 1426.932  MAPE = 13.7874
+    - SARIMAX (0,1,1)(2,1,0)[52] with a seasonality of  52 weeks: AIC = 1940.700  MAPE =  9.4475
+    - SARIMAX(2,1,2)(2,1,0)[104] with a seasonality of 104 weeks: AIC = 1662.785  MAPE =  8.5770
+    - SARIMAX(0,1,1)(1,1,0)[156] with a seasonality of 156 weeks: AIC = 1426.932  MAPE = 13.7874
       
    
-    ![SARIMAX with seasonality of 52 weeks](Images/SARIMAX(0,1,1)x(2,1,0,52).png)
+    ![SARIMAX with seasonality of 52 weeks](Images/SARIMAX(0,1,1)[52](2,1,0).png)
     
-    ![SARIMAX with seasonality of 104 weeks](Images/SARIMAX(2,1,2)x(2,1,0,104).png)
+    ![SARIMAX with seasonality of 104 weeks](Images/SARIMAX(2,1,2)[104](2,1,0).png)
     
-    ![SARIMAX with seasonality of 156 weeks](Images/SARIMAX(0,1,1)x(1,1,0,156).png)
+    ![SARIMAX with seasonality of 156 weeks](Images/SARIMAX(0,1,1)[156(1,1,0).png)
     
     
     Checked the best model's residuals to make sure that the variability looks like white noise:
