@@ -241,8 +241,9 @@ The methodology followed for producing an ARIMA model is summarized in the follo
    - keras.layers.Dense(1, activation='relu')) 
    - compile(optimizer='adam', loss='mape')
    
-   Model fit with 500 Epochs brought loss funtion (MAPE) down to: 3.1887
+   Model was fit with 500 Epochs brought loss funtion (MAPE) down to: 3.1887
    
+   ![Training and Validation Loss](Images/LSTM_Univariate_Price_Model_Training_and_Validation_loss.png)
    Looking at MAPE over the test data (about 30% of total data)
    
    ![Univariate LSTM](Images/UnivariateLSTMModelPredictions_testdata)
@@ -254,6 +255,22 @@ The methodology followed for producing an ARIMA model is summarized in the follo
    
   ![All features](Images/AllFeatures.png)
    
+   
+   **Multivariate Single-step output Model**
+   keras.Sequential()
+   keras.layers.LSTM(...)
+   keras.layers.Dropout(0.1))
+   keras.layers.LSTM(...)
+   keras.layers.Dense(1))
+   
+   Model was fit with 500 Epochs brought loss funtion (MAPE) down to: 2.5002
+
+   ![Training and Validation Loss](Images/Single_Step_Training_and_Validation_loss.png)
+   
+   Some sample predictions:
+   
+   ![Sample Single Step Predictions](Images/SampleSingeStepPredictions)
+   
    **Multivariate Multi-step output Model**
    For 3 weeks ahead forecasting
    
@@ -263,11 +280,15 @@ The methodology followed for producing an ARIMA model is summarized in the follo
    - keras.layers.LSTM(...)
    - keras.layers.Dense(3))
    - compile(optimizer='adam', loss='mape')
+   
+   Model was fit with 300 Epochs brought loss funtion (MAPE) down to: 11.3240
 
-   ![3-step forecast](Multistep_LSTM_Forecast_3weeks.png)
+   ![Training and Validation Loss](Images/Multi_Step_Training_and_Validation_loss.png)
    
-   MAPE for 3 weeks forecasts = 42.57
+   Some sample predictions:
    
+   ![Sample Multi Step Predictions](Images/SampleMultiStepPredictions)
+ 
    
 ## Next Steps
 - Try multivariate SARIMAX 
