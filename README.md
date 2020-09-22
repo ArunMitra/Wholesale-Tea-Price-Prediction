@@ -139,17 +139,80 @@ but also has incorporated other features like:
 
 MAPE: Mean Absolute Percentage Error was chosem as the model metric
 
-## Base Model
+## ARIMA/SARIMAX Models
+
+![CTC Leaf Price Data](Images/CTC_Leaf_Prices.png)
 
 - Since no obvious annual seasonality was observed, I started with:
 
     - **Univariate ARIMA model**
     
+    Data is non-stationary (ADF p-value = 0.23022144267525432)
     
+    Did First differencing
     
+    ![Series and First Differences](Images/Series and First Differences.png]
     
+    Checked for stationarity (ADFuller Test)
+    ADF p-value for differenced price series: 0.00
     
+    Concluded that I can proceed with ARIMA
     
+    Looked at the auto and partial auto correlation plotsto determine the correct order for the AR and MA models
+    
+    ![Autocorrelation](Images/Partial Autocorrelation)
+    ![Partial Autocorrelation](Images/Partial Autocorrelation.png]
+    Since one differencing achieved stationarity, this suggested that the original series should be modeled as an  𝐴𝑅𝐼𝑀𝐴(1,1,1) 
+    
+    However, this gave poor results: AIC = 2090.626
+    
+    Treid other p, d, q values as follows:
+    {'AR': 2, 'MA': 0},
+    {'AR': 2, 'MA': 1},
+    {'AR': 1, 'MA': 0},
+    {'AR': 1, 'MA': 1},
+    {'AR': 3, 'MA': 0},
+    {'AR': 3, 'MA': 1}
+    
+    Results obtained were:
+    ARIMA(2, 1, 0) AIC: 2090.478012840021
+    ARIMA(2, 1, 1) AIC: 2086.769481885772
+    ARIMA(1, 1, 0) AIC: 2088.6958921646024
+    ARIMA(1, 1, 1) AIC: 2090.625790904691
+    ARIMA(3, 1, 0) AIC: 2081.4707156798445
+    ARIMA(3, 1, 1) AIC: 2082.3967226022946
+    
+    Then, tried stepwise Auto Arima search and observed best result as follows:
+    
+    **SARIMAX (0,1,1)(2,1,0)[52] with a seasonality of 52 weeks AIC = 1633.951**
+    
+    After splitting the data into train and test and runnning through this model, results were as follows:
+    ![SARIMAX with seasonality of 52 weeks](Images/SARIMAX(0, 1, 1)x(2, 1, [], 52).png)
+    
+    MAPE = 9.99
+    
+    Then compared seasonality of 52, 104 and also 156 (3 years - which is the time it takes for tea plants to mature), and found that:
+    
+    SARIMAX(0,1,1)(2,1,0)[52] :   AIC = 1633.951
+    SARIMAX(2,1,2)(2,1,0)[104] :  AIC = 1662.785
+    **SARIMAX(0,1,1)(1,1,0)[156]  : AIC=1113.899 ... is the best!**
+   
+    However, results were NOT so good
+    ![Best SARIMAX with seasonality of 156 weeks](Images/Best SARIMAX Model Forecasts for 3 weeks)
+    
+    MAPE for 3 weeks prediction = 4.74
+   
+   ## LSTM Models
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
     Started with 3 options:
   - Logistic Regression
   - Random Forest Classifier
