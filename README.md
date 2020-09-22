@@ -172,13 +172,13 @@ The methodology followed for producing an ARIMA model is summarized in the follo
     
     However, this gave poor results: AIC = 2090.626
     
-    Treid other p, d, q values as follows:
-    {'AR': 2, 'MA': 0},
-    {'AR': 2, 'MA': 1},
-    {'AR': 1, 'MA': 0},
-    {'AR': 1, 'MA': 1},
-    {'AR': 3, 'MA': 0},
-    {'AR': 3, 'MA': 1}
+    Tried other p, d, q values as follows:
+    'AR': 2, 'MA': 0,
+    'AR': 2, 'MA': 1,
+    'AR': 1, 'MA': 0,
+    'AR': 1, 'MA': 1,
+    'AR': 3, 'MA': 0,
+    'AR': 3, 'MA': 1
     
     Results obtained were:
     ARIMA(2, 1, 0) AIC: 2090.478012840021
