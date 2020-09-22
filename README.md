@@ -43,12 +43,12 @@ As far as is currently known, Hindustan Unilever Limited (as a tea packeteer) is
 but also has incorporated other features like:
 - quality indices
 - market feedback on quality
+- the consumer price index
 - ... and more...
 
 ## The Goals of this Project:
 
-- To build a continuosly updated predictive analytics pipleline that can be useful to all players in the market, to bring about efficiencies
-- This will be a non-profit project, interested parties will be able to access model predictions at a nominal fee to cover costs   
+- To build a continuosly updated predictive analytics pipleline accessible to buyers, sellers and auctioneers in the Tea Auction market in India
 - This repo represents the initial exploratory work that has been done towards this goal
 
 ## The Process
@@ -141,6 +141,12 @@ MAPE: Mean Absolute Percentage Error was chosem as the model metric
 
 ## ARIMA/SARIMAX Models
 
+The methodology followed for producing an ARIMA model is summarized in the following flowchart, taken from Hyndmann.
+
+![Hyndmann Modeling Porcess](Images/hyndman-modeling-process.png)
+
+- Since no obvious annual seasonality was observed, I started with:
+
 ![CTC Leaf Price Data](Images/CTC_Leaf_Prices.png)
 
 - Since no obvious annual seasonality was observed, I started with:
@@ -182,25 +188,45 @@ MAPE: Mean Absolute Percentage Error was chosem as the model metric
     ARIMA(3, 1, 0) AIC: 2081.4707156798445
     ARIMA(3, 1, 1) AIC: 2082.3967226022946
     
-    Then, tried stepwise Auto Arima search and observed best result as follows:
     
-    **SARIMAX (0,1,1)(2,1,0)[52] with a seasonality of 52 weeks AIC = 1633.951**
+    Then, tried stepwise **Auto Arima** search and observed result as follows:
     
-    After splitting the data into train and test and runnning through this model, results were as follows:
-    ![SARIMAX with seasonality of 52 weeks](Images/SARIMAX(0,1,1)x(2,1,[],52).png)
-    
-    MAPE = 9.99
-    
-    Then compared seasonality of 52, 104 and also 156 (3 years - which is the time it takes for tea plants to mature), and found that:
-    
-    SARIMAX(0,1,1)(2,1,0)[52] :   AIC = 1633.951
-    SARIMAX(2,1,2)(2,1,0)[104] :  AIC = 1662.785
-    **SARIMAX(0,1,1)(1,1,0)[156]  : AIC=1113.899 ... is the best!**
+    SARIMAX (0,1,1)(2,1,0)[52] with a seasonality of  52 weeks: AIC = 1940.700  MAPE =  9.4475
+    SARIMAX(2,1,2)(2,1,0)[104] with a seasonality of 104 weeks: AIC = 1662.785  MAPE =  8.5770
+    SARIMAX(0,1,1)(1,1,0)[156] with a seasonality of 156 weeks: AIC = 1426.932  MAPE = 13.7874
+      
    
-    However, results were NOT so good
-    ![Best SARIMAX with seasonality of 156 weeks](Images/Best_SARIMAX_Model_Forecasts_for_3_weeks.png)
+    ![SARIMAX with seasonality of 52 weeks](Images/SARIMAX(0,1,1)x(2,1,0,52).png)
     
-    MAPE for 3 weeks prediction = 4.74
+    ![SARIMAX with seasonality of 104 weeks](Images/SARIMAX(2,1,2)x(2,1,0,104).png)
+    
+    ![SARIMAX with seasonality of 156 weeks](Images/SARIMAX(0,1,1)x(1,1,0,156).png)
+    
+    
+    Checked the best model's residuals to make sure that the variability looks like white noise:
+    ![Best SARIMAX Residuals](Images/Residuals_from_SARIMAX(2,1,2)[104](2,1,0))
+   
+    And checked for correlations:
+    ![Best SARIMAX Autocorrelation](Images/Autocorrelation_from_SARIMAX(2,1,2)[104](2,1,0))
+    
+    
+    
+    Future predictions (into the first weeks of 2020 ... remember that we decided to only use data up to 2019, but we do have 2020 data)
+    
+    
+    Prediction results were:
+    ![SARIMAX with seasonality of 52 weeks](Images/SARIMAX_52_Model_Forecasts_for_3_weeks.png)
+    SARIMAX(52 weeks seasonality) MAPE for 3 weeks prediction = 3.3547
+    
+    ![SARIMAX with seasonality of 104 weeks](Images/SARIMAX_104_Model_Forecasts_for_3_weeks.png)
+    SARIMAX(104 weeks seasonality) MAPE for 3 weeks prediction = 5.9720
+    
+    ![SARIMAX with seasonality of 156 weeks](Images/SARIMAX_156_Model_Forecasts_for_3_weeks.png)
+    SARIMAX(156 weeks seasonality) MAPE for 3 weeks prediction = 4.8335
+    
+  
+    
+    
    
    ## LSTM Models
 
