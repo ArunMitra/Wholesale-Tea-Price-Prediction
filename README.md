@@ -204,11 +204,10 @@ The methodology followed for producing an ARIMA model is summarized in the follo
     
     
     Checked the best model's residuals to make sure that the variability looks like white noise:
-    ![Best SARIMAX Residuals](Images/Residuals_from_SARIMAX(2,1,2)[104](2,1,0))
+    ![Best SARIMAX Residuals](Images/Residuals_from_SARIMAX(2,1,2)[104](2,1,0).png)
    
     And checked for correlations:
-    ![Best SARIMAX Autocorrelation](Images/Autocorrelation_from_SARIMAX(2,1,2)[104](2,1,0))
-    
+    ![Best SARIMAX Autocorrelation](Images/Autocorrelation_from_SARIMAX(2,1,2)[104](2,1,0).png)
     
     
     Future predictions (into the first weeks of 2020 ... remember that we decided to only use data up to 2019, but we do have 2020 data)
@@ -223,9 +222,6 @@ The methodology followed for producing an ARIMA model is summarized in the follo
     
     ![SARIMAX with seasonality of 156 weeks](Images/SARIMAX_156_Model_Forecasts_for_3_weeks.png)
     SARIMAX(156 weeks seasonality) MAPE for 3 weeks prediction = 4.8335
-    
-  
-    
     
    
    ## LSTM Models
