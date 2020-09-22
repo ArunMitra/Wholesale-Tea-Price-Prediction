@@ -205,7 +205,8 @@ The methodology followed for producing an ARIMA model is summarized in the follo
     
     Checked the best model's residuals to make sure that the variability looks like white noise:
     ![Best SARIMAX Residuals](Images/Residuals_from_SARIMAX(2,1,2)[104](2,1,0).png)
-   
+    
+    
     And checked for correlations:
     ![Best SARIMAX Autocorrelation](Images/Autocorrelation_from_SARIMAX(2,1,2)[104](2,1,0).png)
     
