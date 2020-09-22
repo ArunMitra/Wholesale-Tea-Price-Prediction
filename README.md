@@ -230,28 +230,36 @@ The methodology followed for producing an ARIMA model is summarized in the follo
    
    ## LSTM Models
 
-   Univariate LSTM Model
-   Model: "sequential"
-    _________________________________________________________________
-    Layer (type)                 Output Shape              Param #   
-    =================================================================
-    lstm (LSTM)                  (None, 10, 32)            4352      
-    _________________________________________________________________
-    dropout (Dropout)            (None, 10, 32)            0         
-    _________________________________________________________________
-    lstm_1 (LSTM)                (None, 32)                8320      
-    _________________________________________________________________
-    dense (Dense)                (None, 1)                 33        
-    =================================================================
-    Total params: 12,705
-    Trainable params: 12,705
-    Non-trainable params: 0
+   **Univariate LSTM Model**
+   - keras.Sequential()
+   - keras.layers.LSTM(...)
+   - keras.layers.Dropout(0.1)
+   - keras.layers.LSTM(...)
+   - keras.layers.Dense(1, activation='relu')) 
+   - compile(optimizer='adam', loss='mape')
    
+   ![Univariate LSTM](Images/UnivariateLSTMModelPredictions_testdata_2020_09_18_21_57_29.png)
+
+   MAPE for known data (before 2020) = 10.994293417050645
    
+   **Multivariate LSTM Model**
+   Includes features: Offer Quantity, Sold Quantity and Price
    
+  ![All features](Images/AllFeatures.png)
    
+   **Multivariate Multi-step output Model**
+   For 3 weeks ahead forecasting
    
+   - keras.Sequential()
+   - keras.layers.LSTM(...)
+   - keras.layers.Dropout(0.1))
+   - keras.layers.LSTM(...)
+   - keras.layers.Dense(3))
+   - compile(optimizer='adam', loss='mape')
+
+   [3-step forecast](Multistep_LSTM_Forecast_3weeks.png)
    
+   MAPE for 3 weeks forecasts = 42.57
    
    
 ## Next Steps
