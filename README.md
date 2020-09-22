@@ -151,7 +151,7 @@ MAPE: Mean Absolute Percentage Error was chosem as the model metric
     
     Did First differencing
     
-    ![Series and First Differences](Images/Series and First Differences.png]
+    ![Series and First Differences](Images/Series_and_First_Differences.png]
     
     Checked for stationarity (ADFuller Test)
     ADF p-value for differenced price series: 0.00
@@ -160,8 +160,8 @@ MAPE: Mean Absolute Percentage Error was chosem as the model metric
     
     Looked at the auto and partial auto correlation plotsto determine the correct order for the AR and MA models
     
-    ![Autocorrelation](Images/Partial Autocorrelation)
-    ![Partial Autocorrelation](Images/Partial Autocorrelation.png]
+    ![Autocorrelation](Images/Autocorrelation.png)
+    ![Partial Autocorrelation](Images/Partial_Autocorrelation.png)
     Since one differencing achieved stationarity, this suggested that the original series should be modeled as an  𝐴𝑅𝐼𝑀𝐴(1,1,1) 
     
     However, this gave poor results: AIC = 2090.626
@@ -187,7 +187,7 @@ MAPE: Mean Absolute Percentage Error was chosem as the model metric
     **SARIMAX (0,1,1)(2,1,0)[52] with a seasonality of 52 weeks AIC = 1633.951**
     
     After splitting the data into train and test and runnning through this model, results were as follows:
-    ![SARIMAX with seasonality of 52 weeks](Images/SARIMAX(0, 1, 1)x(2, 1, [], 52).png)
+    ![SARIMAX with seasonality of 52 weeks](Images/SARIMAX(0,1,1)x(2,1,[],52).png)
     
     MAPE = 9.99
     
@@ -198,7 +198,7 @@ MAPE: Mean Absolute Percentage Error was chosem as the model metric
     **SARIMAX(0,1,1)(1,1,0)[156]  : AIC=1113.899 ... is the best!**
    
     However, results were NOT so good
-    ![Best SARIMAX with seasonality of 156 weeks](Images/Best SARIMAX Model Forecasts for 3 weeks)
+    ![Best SARIMAX with seasonality of 156 weeks](Images/Best_SARIMAX_Model_Forecasts_for_3_weeks.png)
     
     MAPE for 3 weeks prediction = 4.74
    
