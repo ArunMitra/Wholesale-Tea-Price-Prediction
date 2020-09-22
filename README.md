@@ -66,8 +66,8 @@ but also has incorporated other features like:
 
 ## The Data
 
-- Data Source
-  ![Tea Board of India](https://www.teaauction.gov.in/pages/News.aspx)
+- Data Source:
+  [Tea Board of India](https://www.teaauction.gov.in/pages/News.aspx)
   
 - Description of Data: 
   - **Weekly data from 2012 until the present on the following features:**
@@ -241,7 +241,11 @@ The methodology followed for producing an ARIMA model is summarized in the follo
    - keras.layers.Dense(1, activation='relu')) 
    - compile(optimizer='adam', loss='mape')
    
-   ![Univariate LSTM](Images/UnivariateLSTMModelPredictions_testdata_2020_09_18_21_57_29.png)
+   Model fit with 500 Epochs brought loss funtion (MAPE) down to: 3.1887
+   
+   Looking at MAPE over the test data (about 30% of total data)
+   
+   ![Univariate LSTM](Images/UnivariateLSTMModelPredictions_testdata)
 
    MAPE for known data (before 2020) = 10.994293417050645
    
@@ -260,7 +264,7 @@ The methodology followed for producing an ARIMA model is summarized in the follo
    - keras.layers.Dense(3))
    - compile(optimizer='adam', loss='mape')
 
-   [3-step forecast](Multistep_LSTM_Forecast_3weeks.png)
+   ![3-step forecast](Multistep_LSTM_Forecast_3weeks.png)
    
    MAPE for 3 weeks forecasts = 42.57
    
