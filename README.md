@@ -269,7 +269,9 @@ The methodology followed for producing an ARIMA model is summarized in the follo
    
    Some sample predictions:
    
-   ![Sample Single Step Predictions](Images/SampleSingeStepPredictions.png)
+   ![Sample Single Step Predictions](Images/SampleSingeStepPredictions1.png)
+   ![Sample Single Step Predictions](Images/SampleSingeStepPredictions2.png)
+   ![Sample Single Step Predictions](Images/SampleSingeStepPredictions3.png)
    
    **Multivariate Multi-step output Model**
    For 3 weeks ahead forecasting
@@ -287,8 +289,9 @@ The methodology followed for producing an ARIMA model is summarized in the follo
    
    Some sample predictions:
    
-   ![Sample Multi Step Predictions](Images/SampleMultiStepPredictions.png)
- 
+   ![Sample Multi Step Predictions](Images/SampleMultiStepPredictions1.png)
+   ![Sample Multi Step Predictions](Images/SampleMultiStepPredictions2.png)
+   ![Sample Multi Step Predictions](Images/SampleMultiStepPredictions3.png)
    
 ## Next Steps
 - Try multivariate SARIMAX 
