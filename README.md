@@ -24,7 +24,7 @@ Considering the complex logistics involved before the tea reaches the consumer, 
    to offer would be greatly enhanced with good predictive analytics. Currently, he said, all they offer is based on intuition! See the last page of the attached 
    report.
 
-The 4 major types of teagrown in India are:
+The **4 major types** of teagrown in India are:
 - **CTC** (Crush, tear, curl: ensures a faster production of a standard quality)
 - **Orthodox** (focuses on preserving the singular virtues of the leaf resulting in fermented tea leaves)
 
@@ -32,7 +32,7 @@ THe above are further divided into"
 - **Leaf** (the better quality leaves and curl), and
 - **Dust** (the dust and fannings leftover from broken tea leaves, so in essence - the waste)
 
-Tea buyers and sellers will always have a rolling stock of tea at any point in time. Even though tea is perishable it is stored upto 9 months. Both buyers and sellers accumulate stocks over time as the market dictates(demand/supply shocks). 
+Tea buyers and sellers always have a rolling stock of tea at any point in time. Even though tea is perishable it is stored upto 9 months. Both buyers and sellers accumulate stocks over time as the market dictates(demand/supply shocks). 
 Tea supply and tea quality are both very unpredictable and are heavily dependent on regional weather patterns. 
 
 As far as is currently known, Hindustan Unilever Limited (as a tea packeteer) is the only company in India that is performing sophisticated predictive analytics internally, using not only historical data about:
@@ -57,13 +57,18 @@ but also has incorporated other features like:
 - EDA: Explore and analyze the data
 - Score: Set a metric to evaluate the models
 - Base model: Iterate through various model options to find the best base model
-- Tune Model: Gridsearch for the best hyperparameters
+- Tune Model: Search for the best hyperparameters
 - Start with a limited scope and iteratively expand the features that will be used
+    - Limit the types of tea to the 4 majors, then incorporate the other categories
+    - Limit the auction centers, start with 1 in S, India, then include the others in S. India. THen move to N. India centers (where the patterns are different)
+    - Start with univariate time series models (price only), then move to multivariate models with quantity features added, then incorporate multiple categories,
+      then include multiple bnear-located auction centers (S. India, N. India separately)
 
 ## The Data
 
 - Data Source
-  - Tea Board of India (https://www.teaauction.gov.in/pages/News.aspx)
+  - [Tea Board of India](https://www.teaauction.gov.in/pages/News.aspx)
+  
 - Description of Data: 
   - **Weekly data from 2012 until the present on the following features:**
     - Offered Quantities
@@ -95,26 +100,32 @@ but also has incorporated other features like:
     - Siliguri
         ... in Northern India
     
-    Anonymized European Retail Bank customer data with ~10,000 rows and 12 features 
-    - customer_id
-    - credit_score
-    - country
-    - gender
-    - age
-    - tenure
-    - balance
-    - products_number
-    - credit_card
-    - active_member
-    - estimated_salary
-  - And a churn (or not) label
-  
-  - The entire data can be downloaded from https://www.neuraldesigner.com/files/datasets/bank_churn.csv
-  - A small sample of the data is in the repo at 'data/bank_churn_shard.csv'
+    This repo is currently (22 September 2020) limited to the work on:
+    - Data starting from 2012 (prior years' data had different aggregations of tea types)
+    - The 4 major tea types only (CTC Leaf, CTC Dust, Ortho Leaf, Ortho Dust)
+    - Only 1 South Indian auction center (Cochin)
+    - North Indian auction centers were left aside for now. NOTE: North Indian tea supply has a very different seasonality from South Indian tea supply due to the 
+      fact that South Indian tea grows in an equatorial climate and is plucked all year round
 
+- Data Cleaning
+  By checking for outliers and missing data, it was found that:
+    - Some of the data (especially form the early years) appears to have involved manual data entry as there were obviuos human errors in the data (for example, 
+      2 consecutive cells on the the samae row had the same values even though one was quantity in Kgs - in the order of 10s of thousands, and the other was price
+      per Kg - in the order of INR 70 to INR 110)
+    - A small percentage (<2%) of NaNs and Zero values were present
+      These were substituted with moving averages from the the past 3 observations(weeks)
+    
 ## EDA
 
-- Overall churn percentage : 20.37%
+- Overall available data points = 448
+- Quantities offered, sold and average price for the Cochin Auction Center from 2012 to 2020 were as follows:
+
+  CTC Leaf:
+ [CTC Leaf Data][Images/CTC_LEAF_Cochin_oqty_sqty_avgp2020_09_21_04_50_55.png]
+
+
+
+- churn percentage : 20.37%
 - A balanced, well-crafted sample
 - Bar charts, histograms and scatter matrix plots of various aspects of the data are to be fould in the jupyter notebook in the folder /Notebook
 - No obvious correlations between features was observed
