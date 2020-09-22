@@ -67,7 +67,7 @@ but also has incorporated other features like:
 ## The Data
 
 - Data Source
-  - ![Tea Board of India](https://www.teaauction.gov.in/pages/News.aspx)
+  ![Tea Board of India](https://www.teaauction.gov.in/pages/News.aspx)
   
 - Description of Data: 
   - **Weekly data from 2012 until the present on the following features:**
@@ -216,7 +216,7 @@ The methodology followed for producing an ARIMA model is summarized in the follo
     
     And checked for correlations:
     ![Best SARIMAX Autocorrelation](Images/Autocorrelation_from_SARIMAX(2,1,2)[104](2,1,0).png)
-    
+
     Future predictions (into the first weeks of 2020 ... remember that we decided to only use data up to 2019, but we do have 2020 data)
     
     
