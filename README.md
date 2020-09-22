@@ -1,7 +1,7 @@
 # Wholesale-Tea-Price-Prediction
 Wholesale tea auction prices prediction
 
-## Prediciting wholesale tea auction prices at Tea Board of India Auctions - a work-in-progress
+## Predicting wholesale tea auction prices at Tea Board of India Auctions - a work-in-progress
 
 ### Background
 
@@ -67,7 +67,7 @@ but also has incorporated other features like:
 ## The Data
 
 - Data Source
-  - [Tea Board of India](https://www.teaauction.gov.in/pages/News.aspx)
+  - ![Tea Board of India](https://www.teaauction.gov.in/pages/News.aspx)
   
 - Description of Data: 
   - **Weekly data from 2012 until the present on the following features:**
@@ -118,28 +118,39 @@ but also has incorporated other features like:
 ## EDA
 
 - Overall available data points = 448
-- Quantities offered, sold and average price for the Cochin Auction Center from 2012 to 2020 were as follows:
+- Quantities offered, sold and average price for the Cochin Auction Center from 2012 to the end of 2019 were as follows:
 
   CTC Leaf:
- [CTC Leaf Data][Images/CTC_LEAF_Cochin_oqty_sqty_avgp2020_09_21_04_50_55.png]
+ ![CTC Leaf Data](Images/CTC_LEAF_Cochin_oqty_sqty_avgp2020_09_19_14_11_02.png)
 
-
-
-- churn percentage : 20.37%
-- A balanced, well-crafted sample
-- Bar charts, histograms and scatter matrix plots of various aspects of the data are to be fould in the jupyter notebook in the folder /Notebook
-- No obvious correlations between features was observed
-- Looking at churn vs. individual features, customer age, balance and number of products a customer uses had some clear differences in distributtion between churners and non-churners. All all other features no difference in distribution was observed 
-
+  CTC Dust:
+ ![CTC Dust Data](Images/CTC_DUST_Cochin_oqty_sqty_avgp2020_09_21_04_48_55.png)
+ 
+  Ortho Leaf:
+ ![Ortho Leaf Data](Images/ORTHO_LEAF_Cochin_oqty_sqty_avgp2020_09_21_04_48_55.png)
+    
+  Ortho Dust:
+ ![Ortho Dust Data](Images/ORTHO_DUST_Cochin_oqty_sqty_avgp2020_09_21_04_48_55.png)
+ 
+- Due to the anomalous nature of 2020 in general, and also borne out by steep rises and declines not seen in any previous years in the data, 
+  2020 data was then excluded in this initial phase of the project
+ 
 ## Model Scoring
 
-Recall: is the metric we are most interested in because false negatives (not finding churners) is what we most want to minimize
-Precision: is also interesting
-Accuracy: should not be too low
+MAPE: Mean Absolute Percentage Error was chosem as the model metric
 
 ## Base Model
 
-- Started with 3 options:
+- Since no obvious annual seasonality was observed, I started with:
+
+    - **Univariate ARIMA model**
+    
+    
+    
+    
+    
+    
+    Started with 3 options:
   - Logistic Regression
   - Random Forest Classifier
   - Gradient Boosting Classifier
