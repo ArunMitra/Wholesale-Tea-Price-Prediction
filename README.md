@@ -21,8 +21,7 @@ Considering the complex logistics involved before the tea reaches the consumer, 
     
 - **For Auctioneers:**
    Auctioneers need give market feedback and intelligence reports to buyers and sellers. My friend believes that the quality of the reports that he would be able
-   to offer would be greatly enhanced with good predictive analytics. Currently, he said, all they offer is based on intuition! See the last page of the attached 
-   report.
+   to offer would be greatly enhanced with good predictive analytics. Currently, he said, all they offer is based on intuition! 
 
 The **4 major types** of teagrown in India are:
 - **CTC** (Crush, tear, curl: ensures a faster production of a standard quality)
