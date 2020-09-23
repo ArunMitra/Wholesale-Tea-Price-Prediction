@@ -21,14 +21,13 @@ Considering the complex logistics involved before the tea reaches the consumer, 
     
 - **For Auctioneers:**
    Auctioneers need give market feedback and intelligence reports to buyers and sellers. My friend believes that the quality of the reports that he would be able
-   to offer would be greatly enhanced with good predictive analytics. Currently, he said, all they offer is based on intuition! See the last page of the attached 
-   report.
+   to offer would be greatly enhanced with good predictive analytics. Currently, he said, all they offer is based on intuition! 
 
 The **4 major types** of teagrown in India are:
 - **CTC** (Crush, tear, curl: ensures a faster production of a standard quality)
 - **Orthodox** (focuses on preserving the singular virtues of the leaf resulting in fermented tea leaves)
 
-THe above are further divided into"
+The above are further divided into
 - **Leaf** (the better quality leaves and curl), and
 - **Dust** (the dust and fannings leftover from broken tea leaves, so in essence - the waste)
 
@@ -221,14 +220,15 @@ The methodology followed for producing an ARIMA model is summarized in the follo
     
     
     Prediction results were:
-    ![SARIMAX with seasonality of 52 weeks](Images/SARIMAX_52_Model_Forecasts_for_3_weeks.png)
     SARIMAX(52 weeks seasonality) MAPE for 3 weeks prediction = 3.3547
-    
+    ![SARIMAX with seasonality of 52 weeks](Images/SARIMAX_52_Model_Forecasts_for_3_weeks.png)
+
+    SARIMAX(104 weeks seasonality) MAPE for 3 weeks prediction = 5.9720    
     ![SARIMAX with seasonality of 104 weeks](Images/SARIMAX_104_Model_Forecasts_for_3_weeks.png)
-    SARIMAX(104 weeks seasonality) MAPE for 3 weeks prediction = 5.9720
-    
+
+    SARIMAX(156 weeks seasonality) MAPE for 3 weeks prediction = 4.8335    
     ![SARIMAX with seasonality of 156 weeks](Images/SARIMAX_156_Model_Forecasts_for_3_weeks.png)
-    SARIMAX(156 weeks seasonality) MAPE for 3 weeks prediction = 4.8335
+
     
    
    ## LSTM Models
@@ -270,7 +270,9 @@ The methodology followed for producing an ARIMA model is summarized in the follo
    Some sample predictions:
    
    ![Sample Single Step Predictions](Images/SampleSingeStepPredictions1.png)
+   
    ![Sample Single Step Predictions](Images/SampleSingeStepPredictions2.png)
+   
    ![Sample Single Step Predictions](Images/SampleSingeStepPredictions3.png)
    
    **Multivariate Multi-step output Model**
@@ -290,7 +292,9 @@ The methodology followed for producing an ARIMA model is summarized in the follo
    Some sample predictions:
    
    ![Sample Multi Step Predictions](Images/SampleMultiStepPredictions1.png)
+   
    ![Sample Multi Step Predictions](Images/SampleMultiStepPredictions2.png)
+   
    ![Sample Multi Step Predictions](Images/SampleMultiStepPredictions3.png)
    
 ## Next Steps
