@@ -27,7 +27,7 @@ The **4 major types** of teagrown in India are:
 - **CTC** (Crush, tear, curl: ensures a faster production of a standard quality)
 - **Orthodox** (focuses on preserving the singular virtues of the leaf resulting in fermented tea leaves)
 
-THe above are further divided into"
+The above are further divided into
 - **Leaf** (the better quality leaves and curl), and
 - **Dust** (the dust and fannings leftover from broken tea leaves, so in essence - the waste)
 
@@ -220,14 +220,15 @@ The methodology followed for producing an ARIMA model is summarized in the follo
     
     
     Prediction results were:
-    ![SARIMAX with seasonality of 52 weeks](Images/SARIMAX_52_Model_Forecasts_for_3_weeks.png)
     SARIMAX(52 weeks seasonality) MAPE for 3 weeks prediction = 3.3547
-    
+    ![SARIMAX with seasonality of 52 weeks](Images/SARIMAX_52_Model_Forecasts_for_3_weeks.png)
+
+    SARIMAX(104 weeks seasonality) MAPE for 3 weeks prediction = 5.9720    
     ![SARIMAX with seasonality of 104 weeks](Images/SARIMAX_104_Model_Forecasts_for_3_weeks.png)
-    SARIMAX(104 weeks seasonality) MAPE for 3 weeks prediction = 5.9720
-    
+
+    SARIMAX(156 weeks seasonality) MAPE for 3 weeks prediction = 4.8335    
     ![SARIMAX with seasonality of 156 weeks](Images/SARIMAX_156_Model_Forecasts_for_3_weeks.png)
-    SARIMAX(156 weeks seasonality) MAPE for 3 weeks prediction = 4.8335
+
     
    
    ## LSTM Models
