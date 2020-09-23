@@ -244,7 +244,8 @@ The methodology followed for producing an ARIMA model is summarized in the follo
    Model was fit with 500 Epochs brought loss funtion (MAPE) down to: 3.1887
    
    ![Training and Validation Loss](Images/LSTM_Univariate_Price_Model_Training_and_Validation_loss.png)
-   Looking at MAPE over the test data (about 30% of total data)
+  
+  Predictions:
    
    ![Univariate LSTM](Images/UnivariateLSTMModelPredictions_testdata.png)
 
