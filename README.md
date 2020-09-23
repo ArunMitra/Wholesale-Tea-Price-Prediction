@@ -304,6 +304,7 @@ The methodology followed for producing an ARIMA model is summarized in the follo
 - Try LSTM with more features
   - Add price, offer quantity and price quantity data for all 4 tea categories
   - Add other South Indian Auction Center Data
+- Add 2020 data
 - Repeat the entire analysis for North Indian Auction Centers
 - Create an automatic pipeline from Tea Board published data into this application
 - Create automated delivery of predictions (via Flask)
