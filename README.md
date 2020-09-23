@@ -258,11 +258,11 @@ The methodology followed for producing an ARIMA model is summarized in the follo
    
    
    **Multivariate Single-step output Model**
-   keras.Sequential()
-   keras.layers.LSTM(...)
-   keras.layers.Dropout(0.1))
-   keras.layers.LSTM(...)
-   keras.layers.Dense(1))
+   - keras.Sequential()
+   - keras.layers.LSTM(...)
+   - keras.layers.Dropout(0.1))
+   - keras.layers.LSTM(...)
+   - keras.layers.Dense(1))
    
    Model was fit with 500 Epochs brought loss funtion (MAPE) down to: 2.5002
 
